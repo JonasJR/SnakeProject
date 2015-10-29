@@ -15,4 +15,8 @@ public class Field {
     public void setK(int k){
         this.k = k;
     }
+
+    public int getK() {
+        return k;
+    }
 }
