@@ -18,7 +18,7 @@ public class ReadFileAndGenerateMap {
         this.path = path;
     }
 
-    public void readFile() {
+    public Map readFile() {
         String currentLine;
 
         try(BufferedReader br = new BufferedReader((new FileReader(path)))) {
@@ -41,13 +41,16 @@ public class ReadFileAndGenerateMap {
             while ((currentLine = br.readLine()) != null) {
                 String[] sep = currentLine.split(",");
                 fields[Integer.parseInt(sep[0])][Integer.parseInt(sep[1])].setK(1);
+                System.out.println(sep[0] + " " + sep[1]);
             }
 
             map = new Map(fields, rows, columns, reds);
             System.out.println("Map created!");
+            return map;
 
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
     }
 }
