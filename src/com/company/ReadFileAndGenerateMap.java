@@ -34,7 +34,7 @@ public class ReadFileAndGenerateMap {
 
             for(int i = 0; i < columns; i++){
                 for (int j = 0; j < rows; j++){
-                    fields[i][j] = new Field(i,j,0);
+                    fields[i][j] = new Field(0);
                 }
             }
 
