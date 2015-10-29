@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         JFileChooser chooser = new JFileChooser();
-        File f = new File("C:/");
+        File f = new File("../src/");
         File filePath;
         int checker;
         System.out.println("Lets user choose file...");
