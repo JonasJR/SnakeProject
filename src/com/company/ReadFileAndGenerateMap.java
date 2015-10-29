@@ -35,8 +35,12 @@ public class ReadFileAndGenerateMap {
             for(int i = 0; i < columns; i++){
                 for (int j = 0; j < rows; j++){
                     fields[i][j] = new Field(0);
+                    System.out.print(i + "" + j + " ");
                 }
+                System.out.println();
             }
+
+            System.out.println();
 
             while ((currentLine = br.readLine()) != null) {
                 String[] sep = currentLine.split(",");
