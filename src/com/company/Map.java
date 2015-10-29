@@ -4,6 +4,7 @@ package com.company;
  * Created by Jonas on 2015-10-29.
  */
 public class Map {
+
     private Field[][] fields;
     private int numberOfRed, rows, columns;
 
