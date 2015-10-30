@@ -26,6 +26,7 @@ public class PaintWindow extends JFrame {
 
     public PaintWindow(ImageIcon background) {
         super("Paint Window");
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.background = background;
@@ -33,7 +34,7 @@ public class PaintWindow extends JFrame {
             panel.setPreferredSize(new Dimension( Math.min(background.getIconWidth(),800), 
                                                   Math.min(background.getIconHeight(),800)));
         } else {
-            panel.setPreferredSize(new Dimension(1000, 1000));
+            panel.setPreferredSize(new Dimension(500, 500));
         }
         this.add(panel);
         this.pack();

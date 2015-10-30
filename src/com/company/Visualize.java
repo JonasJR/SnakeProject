@@ -13,6 +13,7 @@ public class Visualize {
     private Map map;
     private int boxWidth;
     private ArrayList<Pos> snake;
+    private int currentLongestSnakeLength;
 
     public Visualize(Map map) {
         this.map = map;
@@ -20,21 +21,44 @@ public class Visualize {
         window = new PaintWindow();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
-        window.setPreferredSize(new Dimension(1000, 1000));
-        new Updater().start();
+        currentLongestSnakeLength = 0;
+        moveSnake(new Pos(0, 0), makeBoard(map.getFields()), 1);
     }
 
-    public void drawWindow() {
+    private int[][] makeBoard(Field[][] fields) {
+        int[][] board = new int[fields.length][fields.length];
+
+        for (int row = 0; row < fields.length; row++) {
+            for (int col = 0; col < fields.length; col++) {
+                board[row][col] = fields[row][col].getK();
+            }
+        }
+        return board;
+    }
+
+    public void drawWindow(int[][] board) {
         int biggestSide = Math.max(map.getColumns(), map.getRows());
         boxWidth = window.getWidth() / biggestSide;
 
-        drawSnake();
-        drawMap();
+//        drawSnake();
+        drawBoard(board);
+    }
 
+    private void drawBoard(int[][] board) {
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board.length; col++) {
+                if (board[row][col] == 1) {
+                    window.fillRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.RED);
+                } else if (board[row][col] == 2) {
+                    window.fillRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.GREEN);
+                }
+                window.drawRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.BLACK, 10);
+            }
+        }
     }
 
     private void drawSnake() {
-        for (Pos p: snake) {
+        for (Pos p : snake) {
             window.fillRect(p.x * boxWidth, p.y * boxWidth, boxWidth, boxWidth, Color.GREEN);
         }
     }
@@ -68,23 +92,60 @@ public class Visualize {
         }
     }
 
-    private class Updater extends Thread {
+    public void moveSnake(Pos snakeHead, int[][] board, int snakeLength) {
+        int[][] tempBoard = board.clone();
+        board[snakeHead.x][snakeHead.y] = 2;
+//        drawWindow(board);
+//        try {
+//            Thread.sleep(1);
+//        } catch (Exception e) {
+//        }
 
-        int x = 0;
-        int y = 0;
+        Pos pos = new Pos(snakeHead.x + 1, snakeHead.y);
 
-        public void run() {
-            while (!Thread.interrupted()) {
-                if (map != null) {
-                    try {
-                        snake.add(new Pos(x, y));
-                        drawWindow();
-                        y++;
-                        Thread.sleep(500);
-                    } catch (Exception e) {
-                    }
-                }
-            }
+        if (validMove(pos, board))
+            moveSnake(pos, board.clone(), snakeLength++);
+
+        pos = new Pos(snakeHead.x, snakeHead.y + 1);
+        if (validMove(pos, board))
+            moveSnake(pos, board.clone(), snakeLength++);
+
+        board = tempBoard;
+        pos = new Pos(snakeHead.x - 1, snakeHead.y);
+        if (validMove(pos, board))
+            moveSnake(pos, board.clone(), snakeLength++);
+
+        board = tempBoard;
+
+        pos = new Pos(snakeHead.x, snakeHead.y - 1);
+        if (validMove(pos, board))
+            moveSnake(pos, board.clone(), snakeLength++);
+
+        if (snakeLength > currentLongestSnakeLength) {
+            currentLongestSnakeLength = snakeLength;
+            System.out.println("Snake length: " + snakeLength);
+            printBoard(board);
+
         }
+
+        board[snakeHead.x][snakeHead.y] = 0;
+//        window.clear();
+    }
+
+    private void printBoard(int[][] board) {
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board.length; col++) {
+                System.out.print(board[row][col] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    private boolean validMove(Pos pos, int[][] board) {
+        if (pos.x >= 0 && pos.x < board.length &&
+                pos.y >= 0 && pos.y < board.length &&
+                board[pos.x][pos.y] == 0) return true;
+        return false;
     }
 }
