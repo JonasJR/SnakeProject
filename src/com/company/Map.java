@@ -6,13 +6,14 @@ package com.company;
 public class Map {
 
     private Field[][] fields;
-    private int numberOfRed, rows, columns;
+    private int numberOfRed, numberOfFields, rows, columns;
 
     public Map(Field[][] fields, int rows, int columns, int numberOfRed){
         this.fields = fields;
         this.rows = rows;
         this.columns = columns;
         this.numberOfRed = numberOfRed;
+        this.numberOfFields = rows * columns;
     }
 
     public int getNumberOfRed() {
@@ -45,5 +46,9 @@ public class Map {
 
     public void setFields(Field[][] fields) {
         this.fields = fields;
+    }
+
+    public int getNumberOfFields() {
+        return numberOfFields;
     }
 }

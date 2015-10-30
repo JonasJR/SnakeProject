@@ -28,7 +28,14 @@ public class GenerateSnakePath {
         //}
     }
 
-    private Snake testPath(Snake snake) {
+    private Snake testPath(Snake snake){
+        Field start = map.getFields()[0][0];
+        Field end = map.getFields()[map.getColumns() - 1][ map.getRows() - 1];
+        snake = testPath(snake, start, end);
+        return snake;
+    }
+
+    private Snake testPath(Snake snake, Field start, Field end) {
         Field[][] fields = map.getFields();
         if (snake.getPosX() < 0 || snake.getPosY() < 0)
             return null;
@@ -40,13 +47,12 @@ public class GenerateSnakePath {
         {
             return snake;
         }
-        //maze[start.row][start.col] = true;
         snake.setPrevPos(snake.getPosX(), snake.getPosY());
-        Field[] nextField = new Field[3];
-        nextField[0] = new Field(snake.getPosX() + 1, snake.getPosY(), fields[snake.getPosX()][snake.getPosY()].getK());
-        nextField[2] = new Field(snake.getPosX(), snake.getPosY() + 1, fields[snake.getPosX()][snake.getPosY()].getK());
-        nextField[1] = new Field(snake.getPosX() - 1, snake.getPosY(), fields[snake.getPosX()][snake.getPosY()].getK());
-        nextField[3] = new Field(snake.getPosX(), snake.getPosY() - 1, fields[snake.getPosX()][snake.getPosY()].getK());
+        Field[] nextField = new Field[4];
+        nextField[0] = map.getFields()[snake.getPosX() + 1][snake.getPosY()];
+        nextField[2] = map.getFields()[snake.getPosX()][snake.getPosY() + 1];
+        nextField[1] = map.getFields()[snake.getPosX() - 1][snake.getPosY()];
+        nextField[3] = map.getFields()[snake.getPosX()][snake.getPosY() - 1];
         int maxLength = -1;
         for (Field next : nextField)
         {
@@ -54,7 +60,6 @@ public class GenerateSnakePath {
             if (snake != null && snake.getTraveled() > maxLength)
             {
                 maxLength = snake.getTraveled();
-                snake.move();
             }
         }
         return snake;
