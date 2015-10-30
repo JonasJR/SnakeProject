@@ -28,6 +28,17 @@ public class Snake {
         this.prevPos.add(newPrevPos);
     }
 
+    public boolean hasBeenThere(int x, int y){
+        Integer[] newPrevPos = new Integer[2];
+        newPrevPos[0] = x;
+        newPrevPos[1] = y;
+        if(prevPos.contains(newPrevPos)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public int getPosX() {
         return posX;
     }
