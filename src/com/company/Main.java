@@ -23,9 +23,7 @@ public class Main {
             System.out.println("Reads the file and generates the map...");
             map = readFileAndGenerateMap.readFile();
             System.out.println("Creates the snake path generator...");
-            GenerateSnakePath generateSnakePath = new GenerateSnakePath(map);
             System.out.println("Generates the snake path...");
-            generateSnakePath.generate();
             Visualize visualize = new Visualize(map);
             visualize.printMap();
         }else{

@@ -54,13 +54,13 @@ public class GenerateSnakePath {
         snake.setPrevPos(snake.getPosX(), snake.getPosY());
         Field[] nextFields = new Field[4];
         if(snake.getPosX() + 1 != maxWidth)
-        nextFields[0] = map.getFields()[snake.getPosX() + 1][snake.getPosY()];
+            nextFields[0] = map.getFields()[snake.getPosX() + 1][snake.getPosY()];
         if(snake.getPosY() + 1 != maxHeight)
-        nextFields[2] = map.getFields()[snake.getPosX()][snake.getPosY() + 1];
+            nextFields[2] = map.getFields()[snake.getPosX()][snake.getPosY() + 1];
         if(snake.getPosX() - 1 != -1)
-        nextFields[1] = map.getFields()[snake.getPosX() - 1][snake.getPosY()];
+            nextFields[1] = map.getFields()[snake.getPosX() - 1][snake.getPosY()];
         if(snake.getPosY() - 1 != -1)
-        nextFields[3] = map.getFields()[snake.getPosX()][snake.getPosY() - 1];
+            nextFields[3] = map.getFields()[snake.getPosX()][snake.getPosY() - 1];
         int maxLength = -1;
         for (Field next : nextFields)
         {
