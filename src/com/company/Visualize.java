@@ -2,27 +2,36 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 /**
  * Created by jerrypedersen on 15-10-29.
  */
-public class Visualize {
+public class Visualize implements KeyListener {
+
+    private static final int SPEED_JUMP = 50;
 
     private PaintWindow window;
     private Map map;
     private int boxWidth;
     private ArrayList<Pos> snake;
     private int currentLongestSnakeLength;
+    private int[][] currentLongestSnake;
+    private long speed;
 
     public Visualize(Map map) {
         this.map = map;
         this.snake = new ArrayList<>();
-        window = new PaintWindow();
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
-        currentLongestSnakeLength = 0;
+        this.window = new PaintWindow();
+        this.window.addKeyListener(this);
+        this.speed = 500;
+
+        this.currentLongestSnakeLength = 0;
+
         moveSnake(new Pos(0, 0), makeBoard(map.getFields()), 1);
+        drawWindow(currentLongestSnake);
     }
 
     private int[][] makeBoard(Field[][] fields) {
@@ -57,12 +66,6 @@ public class Visualize {
         }
     }
 
-    private void drawSnake() {
-        for (Pos p : snake) {
-            window.fillRect(p.x * boxWidth, p.y * boxWidth, boxWidth, boxWidth, Color.GREEN);
-        }
-    }
-
     private void drawMap() {
         for (int row = 0; row < map.getRows(); row++) {
             for (int col = 0; col < map.getColumns(); col++) {
@@ -74,13 +77,23 @@ public class Visualize {
         }
     }
 
-    public void printMap() {
-        for (int row = 0; row < map.getRows(); row++) {
-            for (int col = 0; col < map.getColumns(); col++) {
-                System.out.print(map.getFields()[row][col].getK() + " ");
-            }
-            System.out.println();
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            this.speed += SPEED_JUMP;
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            if (this.speed > SPEED_JUMP) this.speed -= SPEED_JUMP;
         }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 
     private class Pos {
@@ -95,41 +108,47 @@ public class Visualize {
     public void moveSnake(Pos snakeHead, int[][] board, int snakeLength) {
         int[][] tempBoard = board.clone();
         board[snakeHead.x][snakeHead.y] = 2;
-//        drawWindow(board);
-//        try {
-//            Thread.sleep(1);
-//        } catch (Exception e) {
-//        }
+        drawWindow(board);
+        try {
+            Thread.sleep(this.speed);
+        } catch (Exception e) {
+        }
+
+        snakeLength += 1;
 
         Pos pos = new Pos(snakeHead.x + 1, snakeHead.y);
 
         if (validMove(pos, board))
-            moveSnake(pos, board.clone(), snakeLength++);
+            moveSnake(pos, board.clone(), snakeLength);
 
+        board = tempBoard;
         pos = new Pos(snakeHead.x, snakeHead.y + 1);
         if (validMove(pos, board))
-            moveSnake(pos, board.clone(), snakeLength++);
+            moveSnake(pos, board.clone(), snakeLength);
 
         board = tempBoard;
         pos = new Pos(snakeHead.x - 1, snakeHead.y);
         if (validMove(pos, board))
-            moveSnake(pos, board.clone(), snakeLength++);
+            moveSnake(pos, board.clone(), snakeLength);
 
         board = tempBoard;
 
         pos = new Pos(snakeHead.x, snakeHead.y - 1);
         if (validMove(pos, board))
-            moveSnake(pos, board.clone(), snakeLength++);
+            moveSnake(pos, board.clone(), snakeLength);
+
+        board = tempBoard;
 
         if (snakeLength > currentLongestSnakeLength) {
             currentLongestSnakeLength = snakeLength;
-            System.out.println("Snake length: " + snakeLength);
+            currentLongestSnake = board;
+            System.out.println("Snake length: " + currentLongestSnakeLength);
             printBoard(board);
 
         }
 
         board[snakeHead.x][snakeHead.y] = 0;
-//        window.clear();
+        window.clear();
     }
 
     private void printBoard(int[][] board) {

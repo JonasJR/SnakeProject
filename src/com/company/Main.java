@@ -25,7 +25,7 @@ public class Main {
             System.out.println("Creates the snake path generator...");
             System.out.println("Generates the snake path...");
             Visualize visualize = new Visualize(map);
-            visualize.printMap();
+//            Test test = new Test(map);
         }else{
             System.out.println("User clicked cancel...");
         }
