@@ -40,7 +40,7 @@ public class Visualize {
         int biggestSide = Math.max(map.getColumns(), map.getRows());
         boxWidth = window.getWidth() / biggestSide;
 
-//        drawSnake();
+        drawSnake();
         drawBoard(board);
     }
 
@@ -95,11 +95,11 @@ public class Visualize {
     public void moveSnake(Pos snakeHead, int[][] board, int snakeLength) {
         int[][] tempBoard = board.clone();
         board[snakeHead.x][snakeHead.y] = 2;
-//        drawWindow(board);
-//        try {
-//            Thread.sleep(1);
-//        } catch (Exception e) {
-//        }
+        drawWindow(board);
+        try {
+            Thread.sleep(1);
+        } catch (Exception e) {
+        }
 
         Pos pos = new Pos(snakeHead.x + 1, snakeHead.y);
 
@@ -129,7 +129,7 @@ public class Visualize {
         }
 
         board[snakeHead.x][snakeHead.y] = 0;
-//        window.clear();
+        window.clear();
     }
 
     private void printBoard(int[][] board) {
