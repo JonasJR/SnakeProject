@@ -26,6 +26,7 @@ public class Main {
             System.out.println("Generates the snake path...");
             Visualize visualize = new Visualize(map);
             visualize.printMap();
+            visualize.printLongestSnake();
         }else{
             System.out.println("User clicked cancel...");
         }

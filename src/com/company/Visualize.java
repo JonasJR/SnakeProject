@@ -14,6 +14,8 @@ public class Visualize {
     private int boxWidth;
     private ArrayList<Pos> snake;
     private int currentLongestSnakeLength;
+    private Snake snaken;
+    private int[][] boarden;
 
     public Visualize(Map map) {
         this.map = map;
@@ -83,6 +85,15 @@ public class Visualize {
         }
     }
 
+    public void printLongestSnake() {
+        int biggestSide = Math.max(map.getColumns(), map.getRows());
+        boxWidth = window.getWidth() / biggestSide;
+        for (Integer[] s : snaken.getPrevPos()) {
+            window.fillRect(s[0] * boxWidth, s[1] * boxWidth, boxWidth, boxWidth, Color.GREEN);
+        }
+        drawBoard(boarden);
+    }
+
     private class Pos {
         public int x, y;
 
@@ -95,11 +106,11 @@ public class Visualize {
     public void moveSnake(Pos snakeHead, int[][] board, int snakeLength) {
         int[][] tempBoard = board.clone();
         board[snakeHead.x][snakeHead.y] = 2;
-        drawWindow(board);
+/*        drawWindow(board);
         try {
-            Thread.sleep(1);
+            Thread.sleep(20);
         } catch (Exception e) {
-        }
+        }*/
 
         Pos pos = new Pos(snakeHead.x + 1, snakeHead.y);
 
@@ -125,16 +136,20 @@ public class Visualize {
             currentLongestSnakeLength = snakeLength;
             System.out.println("Snake length: " + snakeLength);
             printBoard(board);
-
         }
 
         board[snakeHead.x][snakeHead.y] = 0;
-        window.clear();
+//        window.clear();
     }
 
     private void printBoard(int[][] board) {
+        snaken = new Snake();
+        boarden = board;
         for (int row = 0; row < board.length; row++) {
             for (int col = 0; col < board.length; col++) {
+                if(board[row][col] == 2){
+                    snaken.setPrevPos(row, col);
+                }
                 System.out.print(board[row][col] + " ");
             }
             System.out.println();
