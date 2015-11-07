@@ -31,8 +31,8 @@ public class PaintWindow extends JFrame {
         this.setResizable(false);
         this.background = background;
         if (background != null) {
-            panel.setPreferredSize(new Dimension( Math.min(background.getIconWidth(),800), 
-                                                  Math.min(background.getIconHeight(),800)));
+            panel.setPreferredSize(new Dimension( Math.min(background.getIconWidth(),800),
+                    Math.min(background.getIconHeight(),800)));
         } else {
             panel.setPreferredSize(new Dimension(500, 500));
         }
@@ -43,7 +43,7 @@ public class PaintWindow extends JFrame {
 
     public void setBackground(ImageIcon icon) {
         this.background = icon;
-    } 
+    }
 
     public void showImage(Icon icon, int x, int y) {
         int index;
@@ -60,7 +60,7 @@ public class PaintWindow extends JFrame {
         }
         repaint();
     }
-    
+
     public void hideImage(Icon icon) {
         int index;
         if (icon == null) {
@@ -71,9 +71,9 @@ public class PaintWindow extends JFrame {
         if (index != -1) {
             icons.remove(index);
             repaint();
-        } 
+        }
     }
-    
+
     public void clear() {
         if (background != null) {
             bg.drawImage(background.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
@@ -83,11 +83,11 @@ public class PaintWindow extends JFrame {
         }
         repaint();
     }
-    
+
     public int getBackgroundWidth() {
         return panel.getWidth();
     }
-    
+
     public int getBackgroundHeight() {
         return panel.getHeight();
     }
@@ -123,7 +123,7 @@ public class PaintWindow extends JFrame {
         } catch (InterruptedException e) {
         }
     }
-    
+
     private class PaintPanel extends JPanel {
 
         protected void paintComponent(Graphics g) {
@@ -181,7 +181,7 @@ public class PaintWindow extends JFrame {
         public void paintIcon(Graphics g) {
             icon.paintIcon(PaintWindow.this, g, this.x, this.y);
         }
-        
+
         public boolean equals(Object obj) {
             IconXY iconXY = (IconXY)obj;
             return this.icon.equals(iconXY.icon);

@@ -2,12 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74758224-14a7-4e3c-9445-c1453c4512cf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Field.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Field.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Visualize$Pos.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Visualize$Pos.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Visualize.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Visualize.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Field.java" afterPath="$PROJECT_DIR$/src/com/company/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Visualize.java" afterPath="$PROJECT_DIR$/src/com/company/Visualize.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/GenerateSnakePath.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/GenerateSnakePath.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Map.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Map.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$1.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$DPShape.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$DPShape.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$DrawOval.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$DrawOval.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$DrawRect.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$DrawRect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$FillOval.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$FillOval.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$FillRect.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$FillRect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$IconXY.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$IconXY.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$Line.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$Line.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$PaintPanel.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow$PaintPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/PaintWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/ReadFileAndGenerateMap.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/ReadFileAndGenerateMap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Snake.class" afterPath="$PROJECT_DIR$/out/production/SnakeProject/com/company/Snake.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/GenerateSnakePath.java" afterPath="$PROJECT_DIR$/src/com/company/GenerateSnakePath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Map.java" afterPath="$PROJECT_DIR$/src/com/company/Map.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PaintWindow.java" afterPath="$PROJECT_DIR$/src/com/company/PaintWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ReadFileAndGenerateMap.java" afterPath="$PROJECT_DIR$/src/com/company/ReadFileAndGenerateMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Snake.java" afterPath="$PROJECT_DIR$/src/com/company/Snake.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
     </list>
     <ignored path="SnakeProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +61,7 @@
       <file leaf-file-name="Visualize.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Visualize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5540541" vertical-offset="1325" max-vertical-offset="2160">
+            <state vertical-scroll-proportion="0.8782467" vertical-offset="989" max-vertical-offset="2160">
               <caret line="106" column="12" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
               <folding />
             </state>
@@ -55,7 +71,7 @@
       <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="165">
               <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
               <folding />
             </state>
@@ -65,7 +81,7 @@
       <file leaf-file-name="ReadFileAndGenerateMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ReadFileAndGenerateMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="915">
+            <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="900">
               <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding />
             </state>
@@ -75,7 +91,7 @@
       <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="630">
+            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="615">
               <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding />
             </state>
@@ -85,7 +101,7 @@
       <file leaf-file-name="Field.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="330">
               <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding>
                 <element signature="e#236#237#0" expanded="true" />
@@ -164,8 +180,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,6 +322,19 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -332,19 +361,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -457,7 +473,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="713" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -466,23 +482,23 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39906833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38198757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39906833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38198757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -632,26 +648,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="630">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="e#463#464#0" expanded="false" />
-            <element signature="e#497#498#0" expanded="false" />
-            <element signature="e#548#549#0" expanded="false" />
-            <element signature="e#594#595#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#686#687#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#749#750#0" expanded="false" />
-            <element signature="e#779#780#0" expanded="false" />
-            <element signature="e#822#823#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#896#897#0" expanded="false" />
-            <element signature="e#925#926#0" expanded="false" />
-            <element signature="e#972#973#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="false" />
-            <element signature="e#1046#1047#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -714,26 +711,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="630">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="e#463#464#0" expanded="false" />
-            <element signature="e#497#498#0" expanded="false" />
-            <element signature="e#548#549#0" expanded="false" />
-            <element signature="e#594#595#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#686#687#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#749#750#0" expanded="false" />
-            <element signature="e#779#780#0" expanded="false" />
-            <element signature="e#822#823#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#896#897#0" expanded="false" />
-            <element signature="e#925#926#0" expanded="false" />
-            <element signature="e#972#973#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="false" />
-            <element signature="e#1046#1047#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -796,26 +774,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="690">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="e#463#464#0" expanded="false" />
-            <element signature="e#497#498#0" expanded="false" />
-            <element signature="e#548#549#0" expanded="false" />
-            <element signature="e#594#595#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#686#687#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#749#750#0" expanded="false" />
-            <element signature="e#779#780#0" expanded="false" />
-            <element signature="e#822#823#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#896#897#0" expanded="false" />
-            <element signature="e#925#926#0" expanded="false" />
-            <element signature="e#972#973#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="false" />
-            <element signature="e#1046#1047#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -885,26 +844,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="e#463#464#0" expanded="false" />
-            <element signature="e#497#498#0" expanded="false" />
-            <element signature="e#548#549#0" expanded="false" />
-            <element signature="e#594#595#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#686#687#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#749#750#0" expanded="false" />
-            <element signature="e#779#780#0" expanded="false" />
-            <element signature="e#822#823#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#896#897#0" expanded="false" />
-            <element signature="e#925#926#0" expanded="false" />
-            <element signature="e#972#973#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="false" />
-            <element signature="e#1046#1047#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +941,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Visualize.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5540541" vertical-offset="1325" max-vertical-offset="2160">
+        <state vertical-scroll-proportion="0.8782467" vertical-offset="989" max-vertical-offset="2160">
           <caret line="106" column="12" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
           <folding />
         </state>
