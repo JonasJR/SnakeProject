@@ -15,6 +15,6 @@ public class Field {
     }
 
     public int getK() {
-        return k;
+        return -k;
     }
 }

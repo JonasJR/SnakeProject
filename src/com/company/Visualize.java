@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by jerrypedersen on 15-10-29.
  */
-public class Visualize implements KeyListener {
+public class Visualize {
 
     private static final int SPEED_JUMP = 50;
 
@@ -25,17 +25,19 @@ public class Visualize implements KeyListener {
         this.map = map;
         this.snake = new ArrayList<>();
         this.window = new PaintWindow();
-        this.window.addKeyListener(this);
-        this.speed = 500;
+        this.speed = 20;
 
         this.currentLongestSnakeLength = 0;
 
-        moveSnake(new Pos(0, 0), makeBoard(map.getFields()), 1);
-        drawWindow(currentLongestSnake);
+        moveSnake(new Pos(0, 0, 1), makeBoard(map.getFields()), 0);
+
+        System.out.println("Longest snake");
+        printBoard(this.currentLongestSnake);
     }
 
     private int[][] makeBoard(Field[][] fields) {
         int[][] board = new int[fields.length][fields.length];
+        this.currentLongestSnake = new int[fields.length][fields.length];
 
         for (int row = 0; row < fields.length; row++) {
             for (int col = 0; col < fields.length; col++) {
@@ -49,16 +51,15 @@ public class Visualize implements KeyListener {
         int biggestSide = Math.max(map.getColumns(), map.getRows());
         boxWidth = window.getWidth() / biggestSide;
 
-//        drawSnake();
         drawBoard(board);
     }
 
     private void drawBoard(int[][] board) {
         for (int row = 0; row < board.length; row++) {
             for (int col = 0; col < board.length; col++) {
-                if (board[row][col] == 1) {
+                if (board[row][col] == -1) {
                     window.fillRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.RED);
-                } else if (board[row][col] == 2) {
+                } else if (board[row][col] > 0) {
                     window.fillRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.GREEN);
                 }
                 window.drawRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.BLACK, 10);
@@ -66,48 +67,9 @@ public class Visualize implements KeyListener {
         }
     }
 
-    private void drawMap() {
-        for (int row = 0; row < map.getRows(); row++) {
-            for (int col = 0; col < map.getColumns(); col++) {
-                if (map.getFields()[row][col].getK() == 1) {
-                    window.fillRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.RED);
-                }
-                window.drawRect(col * boxWidth, row * boxWidth, boxWidth, boxWidth, Color.BLACK, 10);
-            }
-        }
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_UP) {
-            this.speed += SPEED_JUMP;
-        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            if (this.speed > SPEED_JUMP) this.speed -= SPEED_JUMP;
-        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
-
-    private class Pos {
-        public int x, y;
-
-        public Pos(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
     public void moveSnake(Pos snakeHead, int[][] board, int snakeLength) {
         int[][] tempBoard = board.clone();
-        board[snakeHead.x][snakeHead.y] = 2;
+        board[snakeHead.x][snakeHead.y] = snakeHead.pos;
         drawWindow(board);
         try {
             Thread.sleep(this.speed);
@@ -115,25 +77,26 @@ public class Visualize implements KeyListener {
         }
 
         snakeLength += 1;
+        snakeHead.pos += 1;
 
-        Pos pos = new Pos(snakeHead.x + 1, snakeHead.y);
+        Pos pos = new Pos(snakeHead.x + 1, snakeHead.y, snakeHead.pos);
 
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
 
         board = tempBoard;
-        pos = new Pos(snakeHead.x, snakeHead.y + 1);
+        pos = new Pos(snakeHead.x, snakeHead.y + 1, snakeHead.pos);
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
 
         board = tempBoard;
-        pos = new Pos(snakeHead.x - 1, snakeHead.y);
+        pos = new Pos(snakeHead.x - 1, snakeHead.y, snakeHead.pos);
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
 
         board = tempBoard;
 
-        pos = new Pos(snakeHead.x, snakeHead.y - 1);
+        pos = new Pos(snakeHead.x, snakeHead.y - 1, snakeHead.pos);
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
 
@@ -141,7 +104,7 @@ public class Visualize implements KeyListener {
 
         if (snakeLength > currentLongestSnakeLength) {
             currentLongestSnakeLength = snakeLength;
-            currentLongestSnake = board;
+            currentLongestSnake = board.clone();
             System.out.println("Snake length: " + currentLongestSnakeLength);
             printBoard(board);
 
@@ -154,7 +117,7 @@ public class Visualize implements KeyListener {
     private void printBoard(int[][] board) {
         for (int row = 0; row < board.length; row++) {
             for (int col = 0; col < board.length; col++) {
-                System.out.print(board[row][col] + " ");
+                System.out.print(String.format("%2d", board[row][col]) + " ");
             }
             System.out.println();
         }
@@ -166,5 +129,15 @@ public class Visualize implements KeyListener {
                 pos.y >= 0 && pos.y < board.length &&
                 board[pos.x][pos.y] == 0) return true;
         return false;
+    }
+
+    private class Pos {
+        public int x, y, pos;
+
+        public Pos(int x, int y, int pos) {
+            this.x = x;
+            this.y = y;
+            this.pos = pos;
+        }
     }
 }
