@@ -11,19 +11,17 @@ import java.util.ArrayList;
  */
 public class Visualize {
 
-    private static final int SPEED_JUMP = 50;
+    private static final long SPEED = 100;
 
     private PaintWindow window;
     private Map map;
     private int boxWidth;
     private int currentLongestSnakeLength;
     private int[][] currentLongestSnake;
-    private long speed;
 
     public Visualize(Map map) {
         this.map = map;
         this.window = new PaintWindow();
-        this.speed = 20;
 
         this.currentLongestSnakeLength = 0;
 
@@ -67,11 +65,10 @@ public class Visualize {
     }
 
     public void moveSnake(Pos snakeHead, int[][] board, int snakeLength) {
-        int[][] tempBoard = board.clone();
         board[snakeHead.x][snakeHead.y] = snakeHead.pos;
         drawWindow(board);
         try {
-            Thread.sleep(this.speed);
+            Thread.sleep(this.SPEED);
         } catch (Exception e) {
         }
 
@@ -83,23 +80,17 @@ public class Visualize {
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
 
-        board = tempBoard;
         pos = new Pos(snakeHead.x, snakeHead.y + 1, snakeHead.pos);
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
 
-        board = tempBoard;
         pos = new Pos(snakeHead.x - 1, snakeHead.y, snakeHead.pos);
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
 
-        board = tempBoard;
-
         pos = new Pos(snakeHead.x, snakeHead.y - 1, snakeHead.pos);
         if (validMove(pos, board))
             moveSnake(pos, board.clone(), snakeLength);
-
-        board = tempBoard;
 
         if (snakeLength > currentLongestSnakeLength) {
             currentLongestSnakeLength = snakeLength;
