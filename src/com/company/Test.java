@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * Created by Xeronic on 15-10-30.
+ * Created by Jerry Pedersen on 15-10-30.
  */
 public class Test {
 

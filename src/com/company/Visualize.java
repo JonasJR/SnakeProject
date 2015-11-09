@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 /**
- * Created by jerrypedersen on 15-10-29.
+ * Created by Jerry Pedersen on 15-10-29.
  */
 public class Visualize {
 
@@ -16,14 +16,12 @@ public class Visualize {
     private PaintWindow window;
     private Map map;
     private int boxWidth;
-    private ArrayList<Pos> snake;
     private int currentLongestSnakeLength;
     private int[][] currentLongestSnake;
     private long speed;
 
     public Visualize(Map map) {
         this.map = map;
-        this.snake = new ArrayList<>();
         this.window = new PaintWindow();
         this.speed = 20;
 
@@ -33,6 +31,7 @@ public class Visualize {
 
         System.out.println("Longest snake");
         printBoard(this.currentLongestSnake);
+        drawBoard(currentLongestSnake);
     }
 
     private int[][] makeBoard(Field[][] fields) {
@@ -104,7 +103,7 @@ public class Visualize {
 
         if (snakeLength > currentLongestSnakeLength) {
             currentLongestSnakeLength = snakeLength;
-            currentLongestSnake = board.clone();
+            currentLongestSnake = copyBoard(board);
             System.out.println("Snake length: " + currentLongestSnakeLength);
             printBoard(board);
 
@@ -139,5 +138,16 @@ public class Visualize {
             this.y = y;
             this.pos = pos;
         }
+    }
+
+    private int[][] copyBoard(int[][] board) {
+        int[][] boardCopy = new int[board.length][board.length];
+
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                boardCopy[i][j] = board[i][j];
+            }
+        }
+        return boardCopy;
     }
 }
